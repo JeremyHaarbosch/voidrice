@@ -67,6 +67,15 @@ let mapleader =" "
 " Spell-check set to F6:
 	map <F6> :setlocal spell! spelllang=en_us,es<CR>
 
+" Toggle DeadKeys set (for accent marks):
+	so ~/.vim/luke/deadkeys.vim
+	nm <leader><leader>d :call ToggleDeadKeys()<CR>
+	imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
+
+" Source my IPA shorcuts:
+	so ~/.vim/luke/ipa.vim
+	nm <leader><leader>i :call ToggleIPA()<CR>
+	imap <leader><leader>i <esc>:call ToggleIPA()<CR>a
 
 " Use urlview to choose and open a url:
 	:noremap <leader>u :w<Home>silent <End> !urlview<CR>
@@ -79,6 +88,9 @@ let mapleader =" "
 	map <leader>f :Goyo \| set linebreak<CR>
 	inoremap <F10> <esc>:Goyo<CR>a
 
+" Toggle Prose Mode with F8:
+    so ~/.vim/luke/prose.vim
+    nm <F8> :call ToggleProse()<CR>
 
 " Enable Goyo by default for mutt writting
 	" Goyo's width will be the line limit in mutt.
